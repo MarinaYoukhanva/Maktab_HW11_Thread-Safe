@@ -1,5 +1,6 @@
 package org.example.base.repository;
 
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.example.base.model.BaseEntity;
 
@@ -10,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Optional;
 
+@Getter
 @RequiredArgsConstructor
 public abstract class BaseRepositoryImpl<ID extends Serializable, T extends BaseEntity<ID>>
         implements BaseRepository<ID, T> {
@@ -40,8 +42,8 @@ public abstract class BaseRepositoryImpl<ID extends Serializable, T extends Base
     @Override
     public void update(T entity) throws SQLException {
         try (PreparedStatement statement = connection.prepareStatement(UPDATE_SQL)) {
-            fillParamsForStatement(statement, entity, true);
-            statement.setInt(getColumnCountNum(), (int) entity.getId());
+            fillParamsForStatement(statement, entity, false);
+            statement.setInt(getColumnCountNum() + 1, (int) entity.getId());
             statement.execute();
         }
     }

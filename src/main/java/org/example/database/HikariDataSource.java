@@ -11,7 +11,7 @@ public class HikariDataSource {
     static {
         try {
             HikariConfig config = new HikariConfig();
-            config.setJdbcUrl("jdbc:mysql://localhost:5432/Wallet");
+            config.setJdbcUrl("jdbc:postgresql://localhost:5432/wallet_hw11");
             config.setUsername("postgres");
             config.setPassword("postgres");
             config.setMaximumPoolSize(10);

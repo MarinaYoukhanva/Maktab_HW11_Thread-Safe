@@ -1,7 +1,8 @@
-package org.example.repository;
+package org.example.repository.impl;
 
 import org.example.base.repository.BaseRepositoryImpl;
 import org.example.entity.User;
+import org.example.repository.UserRepository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -61,7 +62,7 @@ public class UserRepositoryImpl extends BaseRepositoryImpl<Integer, User>
             CREATE TABLE IF NOT EXISTS "user"
             (
                 id SERIAL PRIMARY KEY,
-                createdAt TIMESTAMP NOT NULL DEFAULT (current_timestamp),
+                created_at TIMESTAMP NOT NULL DEFAULT (current_timestamp),
                 username VARCHAR(50) UNIQUE NOT NULL,
                 password VARCHAR(50) NOT NULL
             )

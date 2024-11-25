@@ -4,6 +4,7 @@ import org.example.database.ApplicationContext;
 import org.example.entity.User;
 import org.example.repository.UserRepository;
 import org.example.service.UserService;
+import org.example.service.WalletService;
 
 import java.sql.SQLException;
 import java.util.Optional;
@@ -12,6 +13,7 @@ public class Main {
     public static void main(String[] args) throws SQLException {
 
         UserService us = ApplicationContext.getUserService();
+        WalletService ws = ApplicationContext.getWalletService();
 
 //        User user1 = new User(0, null, "a", "b");
 //        us.save(user1);

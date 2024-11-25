@@ -40,7 +40,7 @@ public class WalletRepositoryImpl extends BaseRepositoryImpl<Integer, Wallet>
 
     @Override
     public int getColumnCountNum() {
-        return 1;
+        return 3;
     }
 
     @Override
@@ -52,7 +52,7 @@ public class WalletRepositoryImpl extends BaseRepositoryImpl<Integer, Wallet>
     public void fillParamsForStatement(PreparedStatement statement, Wallet entity, Boolean isCountOnly) throws SQLException {
         statement.setString(1,entity.getAddress());
         statement.setDouble(2,entity.getBalance());
-        statement.setInt(3,entity.getId());
+        statement.setInt(3,entity.getUser().getId());
     }
 
     @Override

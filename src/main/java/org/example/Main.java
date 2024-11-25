@@ -2,7 +2,7 @@ package org.example;
 
 import org.example.database.ApplicationContext;
 import org.example.entity.User;
-import org.example.repository.UserRepository;
+import org.example.service.TransactionService;
 import org.example.service.UserService;
 import org.example.service.WalletService;
 
@@ -14,6 +14,7 @@ public class Main {
 
         UserService us = ApplicationContext.getUserService();
         WalletService ws = ApplicationContext.getWalletService();
+        TransactionService ts = ApplicationContext.getTransactionService();
 
 //        User user1 = new User(0, null, "a", "b");
 //        us.save(user1);

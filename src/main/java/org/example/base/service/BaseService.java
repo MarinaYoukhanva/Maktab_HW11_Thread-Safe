@@ -8,8 +8,8 @@ import java.util.Optional;
 
 public interface BaseService<ID extends Serializable, T extends BaseEntity<ID>> {
 
-    void save(T entity) throws SQLException;
-    void update(T entity) throws SQLException;
-    void delete(ID id) throws SQLException;
-    Optional<T> findById(ID id) throws SQLException;
+    void save(T entity) ;
+    void update(T entity);
+    void delete(ID id) ;
+    Optional<T> findById(ID id) ;
 }

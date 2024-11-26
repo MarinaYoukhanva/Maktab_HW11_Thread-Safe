@@ -24,4 +24,8 @@ public class Wallet extends BaseEntity<Integer> {
         this.balance = balance;
         this.user = user;
     }
+
+    public Wallet (double balance){
+        this.balance = balance;
+    }
 }

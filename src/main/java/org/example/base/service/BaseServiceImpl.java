@@ -14,22 +14,38 @@ public class BaseServiceImpl<ID extends Serializable, T extends BaseEntity<ID>,
     private final R repository;
 
     @Override
-    public void save(T entity) throws SQLException {
-        repository.save(entity);
+    public void save(T entity){
+        try {
+            repository.save(entity);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
-    public void update(T entity) throws SQLException {
-        repository.update(entity);
+    public void update(T entity){
+        try {
+            repository.update(entity);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
-    public void delete(ID id) throws SQLException {
-        repository.delete(id);
+    public void delete(ID id) {
+        try {
+            repository.delete(id);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
-    public Optional<T> findById(ID id) throws SQLException {
-        return repository.findById(id);
+    public Optional<T> findById(ID id) {
+        try {
+            return repository.findById(id);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

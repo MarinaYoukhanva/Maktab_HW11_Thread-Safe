@@ -71,7 +71,7 @@ public class WalletRepositoryImpl extends BaseRepositoryImpl<Integer, Wallet>
             (
                 id SERIAL PRIMARY KEY,
                 created_at TIMESTAMP NOT NULL DEFAULT (current_timestamp),
-                address CHAR(30) UNIQUE NOT NULL,
+                address CHAR(10) UNIQUE NOT NULL,
                 balance DOUBLE PRECISION DEFAULT (0),
                 user_id INT NOT NULL REFERENCES "user"(id)
             )
